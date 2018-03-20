@@ -1,1 +1,2 @@
 # AndroidMvp框架
+使用dagger2,如果使用dagger2需要在相应模块添加kapt
