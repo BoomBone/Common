@@ -8,18 +8,18 @@ import com.home.common.presenter.MainPresenter
 import com.home.common.presenter.view.MainView
 
 class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        injection()
-        mPresenter.println()
-    }
-
-    private fun injection() {
+    override fun injectComponent() {
         DaggerMainComponent.builder()
+                .activityComponent(activityComponent)
                 .build()
                 .inject(this)
         mPresenter.mView = this
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        mPresenter.println()
+    }
+
 }
