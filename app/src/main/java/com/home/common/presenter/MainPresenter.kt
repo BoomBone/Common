@@ -1,15 +1,10 @@
 package com.home.common.presenter
 
-import android.content.Context
-import android.util.Log
-import android.widget.Button
+import com.home.base.net.BaseObserver
 import com.home.base.net.ext.execute
 import com.home.base.presenter.BasePresenter
 import com.home.common.presenter.view.MainView
 import com.work.ddnet.rx.RxRestClient
-import io.reactivex.Observer
-import io.reactivex.disposables.Disposable
-import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 /**
@@ -23,17 +18,7 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
                 .url("http://news.baidu.com/")
                 .build()
                 .get()
-                .execute(object : Observer<String> {
-                    override fun onSubscribe(d: Disposable) {
-
-                    }
-
-                    override fun onError(e: Throwable) {
-                    }
-
-                    override fun onComplete() {
-                    }
-
+                .execute(object : BaseObserver<String>(mView) {
                     override fun onNext(t: String) {
                         mView.success()
                     }

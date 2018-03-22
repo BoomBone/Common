@@ -44,7 +44,9 @@ abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), BaseView 
 
     }
 
-    override fun onError() {
+    override fun onError(error: String) {
 
     }
+
+
 }
