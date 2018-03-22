@@ -17,31 +17,27 @@ import javax.inject.Inject
  * @date 2018/3/19.
  */
 class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
-    fun println() {
-        Log.e("main", "main")
+
+    fun testNet() {
+        RxRestClient.builder()
+                .url("http://news.baidu.com/")
+                .build()
+                .get()
+                .execute(object : Observer<String> {
+                    override fun onSubscribe(d: Disposable) {
+
+                    }
+
+                    override fun onError(e: Throwable) {
+                    }
+
+                    override fun onComplete() {
+                    }
+
+                    override fun onNext(t: String) {
+                        mView.success()
+                    }
+                })
     }
 
-    fun testNet(btn: Button, context: Context) {
-        btn.setOnClickListener {
-            RxRestClient.builder()
-                    .url("http://news.baidu.com/")
-                    .build()
-                    .get()
-                    .execute(object : Observer<String> {
-                        override fun onSubscribe(d: Disposable) {
-
-                        }
-
-                        override fun onError(e: Throwable) {
-                        }
-
-                        override fun onComplete() {
-                        }
-
-                        override fun onNext(t: String) {
-                            context.toast("网络请求成功")
-                        }
-                    })
-        }
-    }
 }
