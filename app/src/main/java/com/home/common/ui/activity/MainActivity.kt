@@ -6,6 +6,7 @@ import com.home.common.R
 import com.home.common.injection.component.DaggerMainComponent
 import com.home.common.presenter.MainPresenter
 import com.home.common.presenter.view.MainView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
     override fun injectComponent() {
@@ -20,6 +21,7 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mPresenter.println()
+        mPresenter.testNet(btn_net,this)
     }
 
 }
