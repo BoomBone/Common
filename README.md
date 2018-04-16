@@ -15,3 +15,6 @@
                 })
 ```
 - 使用dagger2,如果使用dagger2需要在相应模块添加kapt
+
+[Glide使用方法](https://muyangmin.github.io/glide-docs-cn/doc/download-setup.html)
+[BRVAH文档](https://www.jianshu.com/p/b343fcff51b0)
