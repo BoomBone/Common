@@ -8,9 +8,14 @@
     tools:context="com.home.common.ui.activity.MainActivity">
 
     <Button
-        android:id="@+id/btn_net"
+        android:id="@+id/mMainBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TestNet" />
+    <ImageView
+        android:id="@+id/mMainIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"/>
 
 </LinearLayout>

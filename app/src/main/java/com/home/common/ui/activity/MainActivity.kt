@@ -2,6 +2,7 @@ package com.home.common.ui.activity
 
 import android.os.Bundle
 import com.home.base.ui.activity.BaseMvpActivity
+import com.home.base.utils.GlideApp
 import com.home.common.R
 import com.home.common.injection.component.DaggerMainComponent
 import com.home.common.presenter.MainPresenter
@@ -26,8 +27,16 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btn_net.setOnClickListener {
+        initView()
+
+    }
+
+    private fun initView() {
+        mMainBtn.setOnClickListener {
             mPresenter.testNet()
+            GlideApp.with(this)
+                    .load("http://7xi8d6.com1.z0.glb.clouddn.com/20180129074038_O3ydq4_Screenshot.jpeg")
+                    .into(mMainIv)
         }
     }
 
