@@ -13,6 +13,9 @@ import org.jetbrains.anko.toast
 class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
     override fun success() {
         toast("网络请求成功")
+        GlideApp.with(this)
+                .load("http://7xi8d6.com1.z0.glb.clouddn.com/20180129074038_O3ydq4_Screenshot.jpeg")
+                .into(mMainIv)
     }
 
 
@@ -34,9 +37,6 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
     private fun initView() {
         mMainBtn.setOnClickListener {
             mPresenter.testNet()
-            GlideApp.with(this)
-                    .load("http://7xi8d6.com1.z0.glb.clouddn.com/20180129074038_O3ydq4_Screenshot.jpeg")
-                    .into(mMainIv)
         }
     }
 
