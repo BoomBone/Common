@@ -7,15 +7,10 @@
     android:orientation="vertical"
     tools:context="com.home.common.ui.activity.MainActivity">
 
-    <Button
-        android:id="@+id/mMainBtn"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mMainRv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TestNet" />
-    <ImageView
-        android:id="@+id/mMainIv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_height="match_parent" />
+
 
 </LinearLayout>

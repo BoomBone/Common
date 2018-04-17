@@ -18,3 +18,4 @@
 
 [Glide使用方法](https://muyangmin.github.io/glide-docs-cn/doc/download-setup.html)
 [BRVAH文档](https://www.jianshu.com/p/b343fcff51b0)
+[FastJson文档](https://github.com/alibaba/fastjson/wiki)
